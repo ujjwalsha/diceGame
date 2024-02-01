@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>roll the dice</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div id="wrapper">
+      <div class="head-container">
+        <h1>Welcome!</h1>
+        <h2><span class="text"></span></h2>
+        <button class="btn clicked">let's play</button>
+      </div>
+
+      <div class="player-info">
+        <input
+          type="text"
+          alt="player-1"
+          player-1
+          placeholder="first player name"
+        />
+        <input
+          type="text"
+          \
+          alt="player-2"
+          player-2
+          placeholder="second player name"
+        />
+        <button class="submitBtn clicked">Submit</button>
+        <p>
+          How to play this game - <button class="know clicked">Know!</button>
+        </p>
+      </div>
+
+      <button moreInfo><i class="fa-solid fa-question clicked"></i></button>
+
+      <div class="popup-menu hidden">
+        <h2>How to play this awesome game</h2>
+        <button class="close-popup clicked">&times;</button>
+      </div>
+
+      <div class="popup-error hidden">
+        <h2>player name should be unique</h2>
+        <button class="close-error clicked">Okay</button>
+      </div>
+
+      <div class="window">
+        <div class="overlay hidden"></div>
+        <div class="winner--loser hidden">
+          <p winner-name>you win the game</p>
+          <!-- <button class="close-error">&times;</button> -->
+
+          <button class="again-play btn-play clicked">
+            <i class="fa-solid fa-rotate-right"></i>play
+          </button>
+          <button class="home btn-play clicked">
+            <i class="fa-solid fa-house"></i>Home
+          </button>
+        </div>
+
+        <div class="header">
+          <i class="fa-solid fa-arrow-left back"></i>
+        </div>
+        <!-- <img src="assets/dice-5.svg" alt="dice" /> -->
+        <div class="button">
+          <button class="reset clicked">🔁Reset</button>
+        </div>
+        <div class="main">
+          <div class="player-1-detail player--0 player--active">
+            <p data-name id="name--0">ujjwal</p>
+            <p data-score id="score--0">0</p>
+            <div class="score">
+              <p>Current</p>
+              <p data-currentScore id="current--0">0</p>
+            </div>
+          </div>
+          <div class="dices">
+            <img src="assets/dice-1.svg" alt="dice1" class="dice" />
+            <button class="roll clicked">🎲Roll</button>
+            <button class="hold clicked">📥Hold</button>
+          </div>
+
+          <div class="player-2-detail player--1">
+            <p data-name0 id="name--1">ujjwal</p>
+            <p data-score0 id="score--1">0</p>
+            <div class="score">
+              <p>Current</p>
+              <p data-currentScore0 id="current--1">0</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="app/app.js"></script>
+  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+  <script>
+    var typed = new Typed('.text', {
+      strings: ["Let's play", 'Think', 'Be a Winner'],
+      typeSpeed: 50,
+      backSpeed: 50,
+      loop: true,
+    });
+  </script>
+</html>
