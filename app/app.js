@@ -19,6 +19,9 @@ const btnRoll = document.querySelector(".roll");
 const resetBtn = document.querySelector(".reset");
 const diceEl = document.querySelector(".dice");
 
+var audio = new Audio("audio/dice.mp3");
+var winner = new Audio("audio/winner.mp3");
+
 setInterval(animate, 1000);
 setInterval(startAnimate, 8000);
 GameDisplay.classList.add("hidden");
@@ -183,7 +186,7 @@ btnRoll.addEventListener("click", function () {
     // generate random number
     const random = Math.trunc(Math.random() * 6) + 1;
     console.log(random);
-
+    audio.play();
     diceEl.classList.remove("hidden");
     diceEl.src = `assets/dice-${random}.svg`;
 
@@ -216,8 +219,7 @@ btnHold.addEventListener("click", function () {
     overlay.classList.remove("hidden");
     winnerLos.classList.remove("hidden");
     let name = document.getElementById(`name--${activePlayer}`).innerHTML;
-    // document.querySelector('.player--active').style.backgroundColor = 'blue';
-    // console.log('name of player', name);
+    winner.play();
     document.querySelector("[winner-name]").innerHTML =
       name + " " + "winner! 🥇";
 
